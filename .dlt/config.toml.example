@@ -6,4 +6,4 @@ log_level="WARNING"  # the system log level of dlt
 dlthub_telemetry = true
 
 [destination.filesystem]
-bucket_url = "file:///Users/christophe.oudar/dev/opensource/dlt-iceberg-slack-backup/data"
+bucket_url = "file:///" # change me

@@ -8,7 +8,6 @@ from slack_sdk.errors import SlackApiError
 import toml
 import os
 
-
 # Load secrets from .dlt/secrets.toml
 def load_secrets():
     secrets_path = os.path.join(os.path.dirname(__file__), ".dlt", "secrets.toml")
@@ -40,7 +39,9 @@ def slack_pipeline():
 
     # Create pipeline
     pipeline = dlt.pipeline(
-        pipeline_name="slack_backup", destination="duckdb", dataset_name="slack_data"
+        pipeline_name="slack_backup",
+        destination="duckdb",
+        dataset_name="slack_data"
     )
 
     # Create source with all configurations
@@ -50,7 +51,7 @@ def slack_pipeline():
         # end_date=datetime(2024, 12, 19),
         table_per_channel=False,
         replies=True,
-    ).parallelize()
+    )
 
     # Run pipeline for all available resources
     info = pipeline.run(source)

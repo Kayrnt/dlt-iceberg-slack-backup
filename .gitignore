@@ -1,5 +1,6 @@
 # ignore secrets, virtual environments and typical python compilation artifacts
-secrets.toml
+.dlt/secrets.toml
+.dlt/config.toml
 # ignore basic python artifacts
 .env
 **/__pycache__/
@@ -8,3 +9,13 @@ secrets.toml
 # ignore duckdb
 *.duckdb
 *.wal
+
+# VS Code
+.vscode
+
+# iceberg
+data/slack_data
+data/init
+
+# dagster tmp
+tmp**
